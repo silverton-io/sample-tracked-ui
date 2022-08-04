@@ -10,7 +10,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-X main.VERSION=$(cat .VERSION)"
 FROM busybox
 
 LABEL maintainer="Jake Thomas <jake@silverton.io>"
-LABEL org.opencontainers.image.description "A lightweight, Snowplow-compatible streaming event collection system."
+LABEL org.opencontainers.image.description "Sample UI for easily sending events"
 
 WORKDIR /app
 COPY --from=build /app/.VERSION .
