@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
-            // ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://cdn.jsdelivr.net/npm/@snowplow/javascript-tracker@3.3.1/dist/sp.js","spget")); 
+            ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://cdn.jsdelivr.net/npm/@snowplow/javascript-tracker@3.3.1/dist/sp.js","spget")); 
             ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://cdn.jsdelivr.net/npm/@snowplow/javascript-tracker@3.4.0/dist/sp.js","sppost")); 
         </script>
         <script>
             // GET tracker
-            // window.spget('newTracker', 'sp', 'localhost:8080', {
-            //     appId: 'site',
-            //     eventMethod: 'get',
-            //     cookieName: "sp-nuid",
-            //     cookieSameSite: 'Lax',
-            //     forceSecureTracker: false,
-            //     withCredentials: false,
-            // });
-            // window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-link-click-tracking@latest/dist/index.umd.min.js",["snowplowLinkClickTracking", "LinkClickTrackingPlugin"]);
-            // window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-ecommerce@latest/dist/index.umd.min.js",["snowplowEcommerce", "EcommercePlugin"]);
-            // window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-performance-timing@latest/dist/index.umd.min.js",["snowplowPerformanceTiming", "PerformanceTimingPlugin"]);
-            // window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-client-hints@latest/dist/index.umd.min.js",["snowplowClientHints", "ClientHintsPlugin"]);
-            // window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-geolocation@latest/dist/index.umd.min.js",["snowplowGeolocation", "GeolocationtPlugin"],[false]);
+            window.spget('newTracker', 'sp', 'localhost:8080', {
+                appId: 'site',
+                eventMethod: 'get',
+                cookieName: "sp-nuid",
+                cookieSameSite: 'Lax',
+                forceSecureTracker: false,
+                withCredentials: false,
+            });
+            window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-link-click-tracking@latest/dist/index.umd.min.js",["snowplowLinkClickTracking", "LinkClickTrackingPlugin"]);
+            window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-ecommerce@latest/dist/index.umd.min.js",["snowplowEcommerce", "EcommercePlugin"]);
+            window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-performance-timing@latest/dist/index.umd.min.js",["snowplowPerformanceTiming", "PerformanceTimingPlugin"]);
+            window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-client-hints@latest/dist/index.umd.min.js",["snowplowClientHints", "ClientHintsPlugin"]);
+            window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-geolocation@latest/dist/index.umd.min.js",["snowplowGeolocation", "GeolocationtPlugin"],[false]);
 
-            // window.spget('setUserId', 'jake@slvrtn.io');
-            // window.spget('enableFormTracking');
-            // window.spget('trackPageView');
-            // window.spget('enableActivityTracking', {
-            //     minimumVisitLength: 10,
-            //     heartbeatDelay: 10
-            // });
+            window.spget('setUserId', 'someone@demo.com');
+            window.spget('enableFormTracking');
+            window.spget('trackPageView');
+            window.spget('enableActivityTracking', {
+                minimumVisitLength: 10,
+                heartbeatDelay: 10
+            });
             // POST tracker
             window.sppost('newTracker', 'sp', 'localhost:8080', {
                 appId: 'site',
@@ -46,12 +46,12 @@
             window.sppost('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-client-hints@latest/dist/index.umd.min.js",["snowplowClientHints", "ClientHintsPlugin"]);
             window.sppost('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-geolocation@latest/dist/index.umd.min.js",["snowplowGeolocation", "GeolocationtPlugin"],[false]);
 
-            // window.sppost('enableActivityTracking', {
-            //     minimumVisitLength: 1,
-            //     heartbeatDelay: 1
-            // });
+            window.sppost('enableActivityTracking', {
+                minimumVisitLength: 1,
+                heartbeatDelay: 1
+            });
             window.sppost('trackPageView');
-            window.sppost('setUserId', 'jake@slvrtn.io');
+            window.sppost('setUserId', 'someone@demo.com');
             window.sppost('enableFormTracking');
         </script>
     </head>
@@ -139,74 +139,74 @@
         <footer>
             <script>
                 // GET-based snowplow
-                // document.getElementById('self-describing-get').addEventListener("click", function() {
-                //     window.spget('trackSelfDescribingEvent', {
-                //         event: {
-                //             schema: 'iglu:com.silverton.io/honeypot/example/viewedProduct/v1.0.json',
-                //             data: {
-                //                 productId: 'ASO01043',
-                //                 category: 'Dresses',
-                //                 brand: 'ACME',
-                //                 returning: true,
-                //                 price: 49.95,
-                //                 sizes: ['xs', 's', 'l', 'xl', 'xxl'],
-                //                 availableSince: new Date(2013,3,7)
-                //             }
-                //         }
-                //     });
-                // });
-                // document.getElementById('self-describing-get-invalid').addEventListener("click", function() {
-                //     window.spget('trackSelfDescribingEvent', {
-                //         event: {
-                //             schema: 'iglu:com.silverton.io/honeypot/example/viewedProduct/v1.0.json',
-                //             data: {
-                //                 productId: 'ASO01043',
-                //                 category: 'Dresses',
-                //                 brand: 'ACME',
-                //                 returning: null,
-                //                 sizes: ['xs', 's', 'l', 'xl', 'xxl'],
-                //                 anotherProp: "whatevers"
-                //             }
-                //         }
-                //     });
-                // });
-                // document.getElementById('struct-get').addEventListener("click", function() {
-                //     window.spget('trackStructEvent', {
-                //         category: "ui",
-                //         action: "clicked-button",
-                //         label: "struct-event",
-                //         property: "someprop",
-                //         value: 118.99
-                //     })
-                // });
-                // document.getElementById('transaction-get').addEventListener("click", function() {
-                //     window.spget('addTrans', {
-                //         orderId: '1234',  // required
-                //         total: 11.99,   // required
-                //         affiliation: 'Acme Clothing', 
-                //         tax: 1.29,
-                //         shipping: 5,
-                //         city: 'San Jose',
-                //         state: 'California',
-                //         country: 'USA',
-                //         currency: 'USD'
-                //     })
-                //     window.spget('addItem', {
-                //         orderId: '1234', // required
-                //         sku: 'DD44',     // required
-                //         name: 'T-Shirt',      
-                //         category: 'Green Medium',
-                //         price: 11.99,
-                //         quantity: 1,
-                //         currency: 'USD'
-                //     });
-                //     window.spget('trackTrans');
-                // });
+                document.getElementById('self-describing-get').addEventListener("click", function() {
+                    window.spget('trackSelfDescribingEvent', {
+                        event: {
+                            schema: 'iglu:io.silverton/honeypot/example/productView/v1.0.json',
+                            data: {
+                                productId: 'ASO01043',
+                                category: 'Dresses',
+                                brand: 'ACME',
+                                returning: true,
+                                price: 49.95,
+                                sizes: ['xs', 's', 'l', 'xl', 'xxl'],
+                                availableSince: new Date(2013,3,7)
+                            }
+                        }
+                    });
+                });
+                document.getElementById('self-describing-get-invalid').addEventListener("click", function() {
+                    window.spget('trackSelfDescribingEvent', {
+                        event: {
+                            schema: 'iglu:io.silverton/honeypot/example/productView/v1.0.json',
+                            data: {
+                                productId: 'ASO01043',
+                                category: 'Dresses',
+                                brand: 'ACME',
+                                returning: null,
+                                sizes: ['xs', 's', 'l', 'xl', 'xxl'],
+                                anotherProp: "whatevers"
+                            }
+                        }
+                    });
+                });
+                document.getElementById('struct-get').addEventListener("click", function() {
+                    window.spget('trackStructEvent', {
+                        category: "ui",
+                        action: "clicked-button",
+                        label: "struct-event",
+                        property: "someprop",
+                        value: 118.99
+                    })
+                });
+                document.getElementById('transaction-get').addEventListener("click", function() {
+                    window.spget('addTrans', {
+                        orderId: '1234',  // required
+                        total: 11.99,   // required
+                        affiliation: 'Acme Clothing', 
+                        tax: 1.29,
+                        shipping: 5,
+                        city: 'San Jose',
+                        state: 'California',
+                        country: 'USA',
+                        currency: 'USD'
+                    })
+                    window.spget('addItem', {
+                        orderId: '1234', // required
+                        sku: 'DD44',     // required
+                        name: 'T-Shirt',      
+                        category: 'Green Medium',
+                        price: 11.99,
+                        quantity: 1,
+                        currency: 'USD'
+                    });
+                    window.spget('trackTrans');
+                });
                 // POST-based snowplow
                 document.getElementById('self-describing-post').addEventListener("click", function() {
                 window.sppost('trackSelfDescribingEvent', {
                     event: {
-                        schema: 'iglu:com.silverton.io/honeypot/example/viewedProduct/v1.0.json',
+                        schema: 'iglu:io.silverton/honeypot/example/productView/v1.0.json',
                         data: {
                             productId: 'ASO01043',
                             category: 'Dresses',
@@ -222,7 +222,7 @@
             document.getElementById('self-describing-post-invalid').addEventListener("click", function() {
                 window.sppost('trackSelfDescribingEvent', {
                     event: {
-                        schema: 'iglu:com.silverton.io/honeypot/example/viewedProduct/v1.0.json',
+                        schema: 'iglu:io.silverton/honeypot/example/productView/v1.0.json',
                         data: {
                             productId: 'ASO01043',
                             category: 'Dresses',
