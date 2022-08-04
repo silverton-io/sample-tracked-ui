@@ -14,11 +14,11 @@ LABEL org.opencontainers.image.description "A lightweight, Snowplow-compatible s
 
 WORKDIR /app
 COPY --from=build /app/.VERSION .
+COPY --from=build /app/sample.html .
 COPY --from=build /app/tracked-ui .
 COPY --from=build /etc/ssl/certs /etc/ssl/certs
 
 
 EXPOSE 8080
-ENV HONEYPOT_CONFIG_PATH=/etc/honeypot/config.yml
 
 ENTRYPOINT [ "./tracked-ui" ]
