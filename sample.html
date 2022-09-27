@@ -10,6 +10,10 @@
         </script>
         <script>
             // GET tracker
+            let contextEntity = {
+            schema: 'iglu:io.silverton/buz/example/user/v1.0.json',
+            data: { userid: 1234, name: 'John Doe' }
+            };
             window.spget('newTracker', 'sp', 'localhost:8080', {
                 appId: 'site',
                 eventMethod: 'get',
@@ -24,6 +28,7 @@
             window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-client-hints@latest/dist/index.umd.min.js",["snowplowClientHints", "ClientHintsPlugin"]);
             window.spget('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-geolocation@latest/dist/index.umd.min.js",["snowplowGeolocation", "GeolocationtPlugin"],[false]);
 
+            window.spget('addGlobalContexts', [contextEntity]);
             window.spget('setUserId', 'someone@demo.com');
             window.spget('enableFormTracking');
             window.spget('trackPageView');
@@ -45,7 +50,7 @@
             window.sppost('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-performance-timing@latest/dist/index.umd.min.js",["snowplowPerformanceTiming", "PerformanceTimingPlugin"]);
             window.sppost('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-client-hints@latest/dist/index.umd.min.js",["snowplowClientHints", "ClientHintsPlugin"]);
             window.sppost('addPlugin', "https://cdn.jsdelivr.net/npm/@snowplow/browser-plugin-geolocation@latest/dist/index.umd.min.js",["snowplowGeolocation", "GeolocationtPlugin"],[false]);
-
+            window.sppost('addGlobalContexts', [contextEntity]);
             window.sppost('enableActivityTracking', {
                 minimumVisitLength: 1,
                 heartbeatDelay: 1
@@ -76,7 +81,6 @@
             <button class="bg-transparent hover:bg-green-600 text-green-800 font-semibold hover:text-white py-2 px-4 border border-green-600 hover:border-transparent rounded"><a href="/">Home</a></button>
             <button class="bg-transparent hover:bg-green-600 text-green-800 font-semibold hover:text-white py-2 px-4 border border-green-600 hover:border-transparent rounded"><a href="/test?utm_medium=somemedium&utm_source=somesource&utm_term=someterm&utm_content=somecontent&utm_campaign=somecampaign">Test</a></button>
             <button class="bg-transparent hover:bg-green-600 text-green-800 font-semibold hover:text-white py-2 px-4 border border-green-600 hover:border-transparent rounded"><a href="/stats" target="_blank">Stats</a></button>
-            <button class="bg-transparent hover:bg-green-600 text-green-800 font-semibold hover:text-white py-2 px-4 border border-green-600 hover:border-transparent rounded"><a href="/schemas" target="_blank">Schemas</a></button>
         </div>
           <div class="container mx-auto px-16 pt-4 snowplow-get">
               <h1 class="font-semibold text-xl">GET-based Snowplow Events</h1>
