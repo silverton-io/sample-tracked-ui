@@ -26,19 +26,6 @@ jobs:
         with:
           path: ./.VERSION
 
-      - name: Authenticate to Google Cloud
-        id: auth-gcloud
-        uses: "google-github-actions/auth@v0"
-        with:
-          token_format: "access_token"
-          workload_identity_provider: "projects/860234713891/locations/global/workloadIdentityPools/honeypot/providers/github"
-          service_account: "honeypot-ci@silverton-io.iam.gserviceaccount.com"
-
-      - name: Configure Docker
-        shell: bash
-        run: |
-          gcloud auth configure-docker ${{ env.GCP_REGISTRY }} --quiet
-
       - name: Login To Github Docker Registry
         uses: docker/login-action@v1
         with:
