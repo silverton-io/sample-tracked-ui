@@ -15,7 +15,7 @@
             schema: 'iglu:io.silverton/buz/example/user/v1.0.json',
             data: { userid: 1234, name: 'John Doe' }
         };
-        window.spget('newTracker', 'sp', 'localhost:8000', {
+        window.spget('newTracker', 'sp', 'localhost:8081', {
             appId: 'site',
             eventMethod: 'get',
             cookieName: "sp-nuid",
@@ -38,7 +38,7 @@
             heartbeatDelay: 10
         });
         // POST tracker
-        window.sppost('newTracker', 'sp', 'localhost:8000', {
+        window.sppost('newTracker', 'sp', 'localhost:8081', {
             appId: 'site',
             eventMethod: 'post',
             bufferSize: 1,
